@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sistem Informasi Desa
 
-## Getting Started
+Aplikasi web administrasi desa berbasis Next.js App Router, TypeScript, Tailwind CSS, ShadCN-style UI, Supabase, React Hook Form, Zod, TanStack Table, dan Recharts.
 
-First, run the development server:
+## Fitur
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Authentication: login, register warga, logout, protected routes, role-based access control.
+- Dashboard admin/staff: statistik warga, KK, surat, bantuan sosial, grafik warga per dusun, aktivitas terbaru.
+- Manajemen data warga dan kartu keluarga.
+- Pengajuan surat online dengan status, dokumen pendukung, dan tombol PDF.
+- Pengumuman, kegiatan, bantuan sosial, laporan export CSV/PDF, dan pengaturan desa.
+- Portal warga: profil, pengajuan surat, status surat, transparansi anggaran, pengumuman, struktur desa, artikel edukasi.
+- Data dummy fallback jika Supabase belum dikonfigurasi.
+
+## Struktur Folder
+
+```txt
+app/                 Route App Router
+actions/             Server Actions untuk mutasi
+components/ui/       Komponen UI ShadCN-style
+components/shared/   Komponen reusable aplikasi
+database/            Schema SQL Supabase
+features/            Komponen per fitur
+lib/                 Utilities, dummy data, Supabase helpers, RBAC
+types/               Tipe domain TypeScript
+validations/         Schema Zod
+public/              Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalasi
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Aplikasi berjalan di `http://localhost:3000`.
 
-## Learn More
+## Setup Supabase
 
-To learn more about Next.js, take a look at the following resources:
+1. Buat project Supabase.
+2. Isi `.env.local`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Buka Supabase SQL Editor.
+4. Jalankan file [database/schema.sql](database/schema.sql).
+5. Aktifkan provider email/password di Supabase Auth.
 
-## Deploy on Vercel
+Saat env Supabase belum diisi, aplikasi tetap bisa dibuka memakai data dummy untuk pengembangan UI.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Script
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run dev      # development server
+npm run build    # production build
+npm run start    # run production server
+npm run lint     # eslint
+```
+
+## Role
+
+- `admin_desa`: mengelola semua data, user, dashboard, pengaturan.
+- `staff_desa`: mengelola data warga, surat, kegiatan, pengumuman, laporan.
+- `warga`: melihat profil sendiri, mengajukan surat, melihat status, pengumuman, transparansi, struktur, artikel.
+
+## Catatan Pengembangan
+
+- Mutasi Supabase sudah disiapkan melalui folder `actions/`, namun beberapa form saat ini memakai dummy fallback agar project langsung bisa berjalan tanpa konfigurasi eksternal.
+- Integrasi produksi berikutnya adalah mengganti query dummy di `lib/data/dummy.ts` dengan query Supabase per fitur, lalu menambahkan upload storage untuk KTP/KK/dokumen surat.
