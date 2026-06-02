@@ -24,26 +24,41 @@ export function AuthLayout({ children }: { children: ReactNode }) {
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(245,238,220,0.28),transparent_28%),linear-gradient(to_top,rgba(45,55,72,0.48),transparent_58%)]" />
         <div className="relative z-10 flex min-h-[360px] flex-col justify-between p-5 text-white sm:p-8 lg:min-h-screen lg:p-10">
-          <Link href="/" className="flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-md">
+          <Link
+            href="/"
+            className="flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-md"
+          >
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-primary">
               <Building2 className="h-5 w-5" />
             </span>
             <span>
               <span className="block text-sm font-bold">Desa Cihaur</span>
-              <span className="block text-xs text-white/75">Kabupaten Kuningan</span>
+              <span className="block text-xs text-white/75">
+                Kabupaten Kuningan
+              </span>
             </span>
           </Link>
 
           <div className="max-w-xl rounded-[24px] border border-white/15 bg-white/12 p-5 shadow-2xl backdrop-blur-md sm:p-7">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Portal Resmi Desa</p>
-            <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Desa Cihaur</h1>
-            <p className="mt-2 text-lg font-medium text-white/88">Sistem Informasi dan Pelayanan Masyarakat</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+              Portal Resmi Desa
+            </p>
+            <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+              Desa Cihaur
+            </h1>
+            <p className="mt-2 text-lg font-medium text-white/88">
+              Sistem Informasi dan Pelayanan Masyarakat
+            </p>
             <p className="mt-4 text-sm leading-7 text-white/78">
-              Mewujudkan pelayanan desa yang cepat, transparan, dan mudah diakses oleh seluruh masyarakat.
+              Mewujudkan pelayanan desa yang cepat, transparan, dan mudah
+              diakses oleh seluruh masyarakat.
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {highlights.map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-white/88">
+                <div
+                  key={item}
+                  className="flex items-center gap-2 text-sm text-white/88"
+                >
                   <CheckCircle2 className="h-4 w-4 text-accent" />
                   <span>{item}</span>
                 </div>
@@ -52,7 +67,7 @@ export function AuthLayout({ children }: { children: ReactNode }) {
           </div>
         </div>
       </section>
-      <section className="flex min-h-[calc(100vh-360px)] items-center justify-center bg-[radial-gradient(circle_at_20%_20%,rgba(107,163,104,0.14),transparent_28%),linear-gradient(135deg,#FAFAF7_0%,#F5EEDC_100%)] px-4 py-8 dark:bg-[radial-gradient(circle_at_20%_20%,rgba(107,163,104,0.16),transparent_28%),linear-gradient(135deg,#111827_0%,#1B241E_100%)] sm:px-6 lg:min-h-screen lg:px-10">
+      <section className="flex min-h-[calc(100vh-360px)] items-center justify-center bg-accent/55 px-4 py-8 sm:px-6 lg:min-h-screen lg:px-10">
         {children}
       </section>
     </main>
