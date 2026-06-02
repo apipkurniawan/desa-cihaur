@@ -1,40 +1,28 @@
 import Link from "next/link";
-import { loginAction } from "@/actions/auth";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { AuthCard } from "@/features/auth/AuthCard";
+import { AuthFooter } from "@/features/auth/AuthFooter";
+import { AuthHeader } from "@/features/auth/AuthHeader";
+import { AuthLayout } from "@/features/auth/AuthLayout";
+import { LoginForm } from "@/features/auth/LoginForm";
+import { SocialProof } from "@/features/auth/SocialProof";
 
 export default function LoginPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-app-background px-4 py-10">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle>Login</CardTitle>
-          <CardDescription>Masuk sebagai admin desa, staff desa, atau warga.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form action={loginAction} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" name="email" type="email" placeholder="admin@desa-cihaur.id" required />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" name="password" type="password" required />
-            </div>
-            <Button type="submit" className="w-full">
-              Login
-            </Button>
-          </form>
-          <p className="mt-4 text-center text-sm text-app-muted">
-            Belum punya akun warga?{" "}
-            <Link href="/register" className="font-medium text-primary">
-              Register
-            </Link>
-          </p>
-        </CardContent>
-      </Card>
-    </main>
+    <AuthLayout>
+      <AuthCard>
+        <AuthHeader
+          title="Selamat Datang Kembali"
+          description="Masuk untuk mengakses layanan dan informasi Desa Cihaur."
+        />
+        <LoginForm />
+        <SocialProof />
+        <AuthFooter text="Belum punya akun warga?" href="/register" linkText="Daftar sekarang" />
+        <div className="mt-5 text-center">
+          <Link href="/" className="text-xs font-medium text-app-muted transition-colors hover:text-primary">
+            Kembali ke beranda Desa Cihaur
+          </Link>
+        </div>
+      </AuthCard>
+    </AuthLayout>
   );
 }

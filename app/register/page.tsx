@@ -1,48 +1,26 @@
 import Link from "next/link";
-import { registerAction } from "@/actions/auth";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { AuthCard } from "@/features/auth/AuthCard";
+import { AuthFooter } from "@/features/auth/AuthFooter";
+import { AuthHeader } from "@/features/auth/AuthHeader";
+import { AuthLayout } from "@/features/auth/AuthLayout";
+import { RegisterForm } from "@/features/auth/RegisterForm";
 
 export default function RegisterPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-app-background px-4 py-10">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle>Register Warga</CardTitle>
-          <CardDescription>Buat akun warga untuk mengajukan surat dan melihat status layanan.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form action={registerAction} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="namaLengkap">Nama Lengkap</Label>
-              <Input id="namaLengkap" name="namaLengkap" required />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="nik">NIK</Label>
-              <Input id="nik" name="nik" inputMode="numeric" required />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" name="email" type="email" required />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" name="password" type="password" required />
-            </div>
-            <Button type="submit" className="w-full">
-              Register
-            </Button>
-          </form>
-          <p className="mt-4 text-center text-sm text-app-muted">
-            Sudah punya akun?{" "}
-            <Link href="/login" className="font-medium text-primary">
-              Login
-            </Link>
-          </p>
-        </CardContent>
-      </Card>
-    </main>
+    <AuthLayout>
+      <AuthCard className="max-w-[620px]">
+        <AuthHeader
+          title="Buat Akun Warga"
+          description="Daftarkan diri Anda untuk menikmati berbagai layanan digital Desa Cihaur."
+        />
+        <RegisterForm />
+        <AuthFooter text="Sudah memiliki akun?" href="/login" linkText="Masuk" />
+        <div className="mt-5 text-center">
+          <Link href="/" className="text-xs font-medium text-app-muted transition-colors hover:text-primary">
+            Kembali ke beranda Desa Cihaur
+          </Link>
+        </div>
+      </AuthCard>
+    </AuthLayout>
   );
 }

@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { loginSchema, registerSchema } from "@/validations/auth";
+import { legacyRegisterSchema, loginSchema, registerSchema } from "@/validations/auth";
 
 export async function loginAction(formData: FormData) {
   const values = loginSchema.parse({
@@ -21,12 +21,16 @@ export async function loginAction(formData: FormData) {
 }
 
 export async function registerAction(formData: FormData) {
-  const values = registerSchema.parse({
+  const rawValues = {
     email: formData.get("email"),
     password: formData.get("password"),
     namaLengkap: formData.get("namaLengkap"),
     nik: formData.get("nik"),
-  });
+    nomorKk: formData.get("nomorKk"),
+    nomorTelepon: formData.get("nomorTelepon"),
+    confirmPassword: formData.get("confirmPassword"),
+  };
+  const values = formData.has("nomorKk") ? registerSchema.parse(rawValues) : legacyRegisterSchema.parse(rawValues);
 
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
     redirect("/warga/profil");
@@ -40,6 +44,8 @@ export async function registerAction(formData: FormData) {
       data: {
         full_name: values.namaLengkap,
         nik: values.nik,
+        nomor_kk: "nomorKk" in values ? values.nomorKk : undefined,
+        phone: "nomorTelepon" in values ? values.nomorTelepon : undefined,
         role: "warga",
       },
     },
