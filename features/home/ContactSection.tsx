@@ -6,6 +6,8 @@ import { villageContact } from "@/lib/data/home";
 import { MotionSection } from "./Motion";
 import { SectionHeading } from "./SectionHeading";
 
+const mapsQuery = encodeURIComponent(villageContact.address);
+
 export function ContactSection() {
   return (
     <MotionSection id="kontak" className="bg-white py-16">
@@ -16,16 +18,15 @@ export function ContactSection() {
           description="Datang ke kantor desa atau hubungi kanal resmi untuk mendapatkan informasi dan bantuan layanan."
         />
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="min-h-[360px] overflow-hidden rounded-3xl border border-app-border bg-accent">
-            <div className="flex h-full min-h-[360px] items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(107,163,104,0.28),transparent_30%),linear-gradient(135deg,rgba(47,107,63,0.14),rgba(245,238,220,0.85))] p-8 text-center">
-              <div>
-                <MapPin className="mx-auto h-10 w-10 text-primary" />
-                <p className="mt-4 text-lg font-bold text-app-text">Google Maps Embed Placeholder</p>
-                <p className="mt-2 max-w-md text-sm leading-6 text-app-muted">
-                  Area ini siap diganti dengan embed Google Maps lokasi Kantor Desa Cihaur.
-                </p>
-              </div>
-            </div>
+          <div className="min-h-[360px] overflow-hidden rounded-3xl border border-app-border bg-accent shadow-sm">
+            <iframe
+              title="Peta Balai Desa Cihaur"
+              src={`https://www.google.com/maps?q=${mapsQuery}&output=embed`}
+              className="h-full min-h-[360px] w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
           <Card className="bg-app-background">
             <CardContent className="space-y-5 p-6">

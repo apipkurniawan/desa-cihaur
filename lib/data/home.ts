@@ -186,7 +186,7 @@ export const latestNews: VillageNews[] = [
 ];
 
 export const villageContact = {
-  address: "Kantor Desa Cihaur, Kecamatan Ciwaru, Kabupaten Kuningan, Jawa Barat",
+  address: "Balai Desa Cihaur, Desa Cihaur, Kecamatan Ciawigebang, Kabupaten Kuningan, Provinsi Jawa Barat",
   phone: "(0232) 123456",
   email: "pemdes@cihaur-kuningan.desa.id",
   whatsapp: "0812-3456-7890",
