@@ -12,7 +12,7 @@ export function SelectTrigger({ className, children, ...props }: React.Component
   return (
     <SelectPrimitive.Trigger
       className={cn(
-        "flex h-10 w-full items-center justify-between rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500",
+        "flex h-10 w-full items-center justify-between rounded-md border border-app-border bg-white px-3 py-2 text-sm text-app-text shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary",
         className,
       )}
       {...props}
@@ -29,7 +29,7 @@ export function SelectContent({ className, children, ...props }: React.Component
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
-        className={cn("z-50 min-w-32 overflow-hidden rounded-md border border-slate-200 bg-white shadow-lg", className)}
+        className={cn("z-50 min-w-32 overflow-hidden rounded-md border border-app-border bg-white shadow-lg", className)}
         {...props}
       >
         <SelectPrimitive.Viewport className="p-1">{children}</SelectPrimitive.Viewport>
@@ -42,7 +42,7 @@ export function SelectItem({ className, children, ...props }: React.ComponentPro
   return (
     <SelectPrimitive.Item
       className={cn(
-        "relative flex cursor-default select-none items-center rounded-sm py-2 pl-8 pr-2 text-sm outline-none focus:bg-emerald-50 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative flex cursor-default select-none items-center rounded-sm py-2 pl-8 pr-2 text-sm outline-none focus:bg-primary/5 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         className,
       )}
       {...props}

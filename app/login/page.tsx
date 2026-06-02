@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 
 export default function LoginPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-10">
+    <main className="flex min-h-screen items-center justify-center bg-app-background px-4 py-10">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Login</CardTitle>
@@ -27,9 +27,9 @@ export default function LoginPage() {
               Login
             </Button>
           </form>
-          <p className="mt-4 text-center text-sm text-slate-500">
+          <p className="mt-4 text-center text-sm text-app-muted">
             Belum punya akun warga?{" "}
-            <Link href="/register" className="font-medium text-emerald-700">
+            <Link href="/register" className="font-medium text-primary">
               Register
             </Link>
           </p>

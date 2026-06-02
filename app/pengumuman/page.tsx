@@ -20,18 +20,18 @@ export default function PengumumanPublicPage() {
           published.map((item) => (
             <Card key={item.id}>
               <CardContent className="p-5">
-                <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                  <span className="font-medium text-emerald-700">{item.kategori}</span>
+                <div className="flex flex-wrap items-center gap-2 text-xs text-app-muted">
+                  <span className="font-medium text-primary">{item.kategori}</span>
                   <span>{formatDate(item.tanggalPublish)}</span>
                 </div>
-                <h2 className="mt-2 text-lg font-semibold text-slate-950">{item.judul}</h2>
-                <p className="mt-2 leading-7 text-slate-600">{item.isi}</p>
+                <h2 className="mt-2 text-lg font-semibold text-app-text">{item.judul}</h2>
+                <p className="mt-2 leading-7 text-app-text/80">{item.isi}</p>
               </CardContent>
             </Card>
           ))
         ) : (
           <Card>
-            <CardContent className="p-8 text-center text-slate-500">Belum ada pengumuman yang dipublikasikan.</CardContent>
+            <CardContent className="p-8 text-center text-app-muted">Belum ada pengumuman yang dipublikasikan.</CardContent>
           </Card>
         )}
       </div>

@@ -23,13 +23,13 @@ export default function ProfilWargaPage() {
             ["Pendidikan", profile.pendidikan],
             ["Alamat", `${profile.alamat}, RT ${profile.rt}/RW ${profile.rw}, ${profile.dusun}`],
           ].map(([label, value]) => (
-            <div key={label} className="rounded-lg bg-slate-50 p-4">
-              <p className="text-xs font-medium uppercase text-slate-500">{label}</p>
-              <p className="mt-1 text-sm font-medium text-slate-950">{value}</p>
+            <div key={label} className="rounded-lg bg-app-background p-4">
+              <p className="text-xs font-medium uppercase text-app-muted">{label}</p>
+              <p className="mt-1 text-sm font-medium text-app-text">{value}</p>
             </div>
           ))}
-          <div className="rounded-lg bg-slate-50 p-4">
-            <p className="mb-2 text-xs font-medium uppercase text-slate-500">Status</p>
+          <div className="rounded-lg bg-app-background p-4">
+            <p className="mb-2 text-xs font-medium uppercase text-app-muted">Status</p>
             <StatusBadge status={profile.status} />
           </div>
         </CardContent>

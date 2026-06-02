@@ -41,7 +41,7 @@ export function DataTable<TData, TValue>({
         placeholder={searchPlaceholder}
         className="max-w-sm"
       />
-      <div className="overflow-hidden rounded-lg border border-slate-200 bg-white">
+      <div className="overflow-hidden rounded-lg border border-app-border bg-white">
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
@@ -66,7 +66,7 @@ export function DataTable<TData, TValue>({
                 ))
               ) : (
                 <TableRow>
-                  <TableCell colSpan={columns.length} className="h-28 text-center text-slate-500">
+                  <TableCell colSpan={columns.length} className="h-28 text-center text-app-muted">
                     Belum ada data yang sesuai.
                   </TableCell>
                 </TableRow>
@@ -76,7 +76,7 @@ export function DataTable<TData, TValue>({
         </div>
       </div>
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-app-muted">
           {table.getFilteredRowModel().rows.length} data ditemukan
         </p>
         <div className="flex gap-2">

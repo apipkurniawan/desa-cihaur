@@ -29,7 +29,7 @@ const columns: ColumnDef<Warga>[] = [
       <ConfirmDialog
         trigger={
           <Button variant="ghost" size="icon" aria-label="Hapus data warga">
-            <Trash2 className="h-4 w-4 text-red-600" />
+            <Trash2 className="h-4 w-4 text-accent" />
           </Button>
         }
       />

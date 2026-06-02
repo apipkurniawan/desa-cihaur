@@ -12,7 +12,7 @@ export function WargaChart({ data }: { data: { dusun: string; total: number }[] 
   }, []);
 
   if (!mounted) {
-    return <div className="h-80 min-h-80 w-full animate-pulse rounded-md bg-slate-100" />;
+    return <div className="h-80 min-h-80 w-full animate-pulse rounded-md bg-primary/10" />;
   }
 
   return (
@@ -23,7 +23,7 @@ export function WargaChart({ data }: { data: { dusun: string; total: number }[] 
           <XAxis dataKey="dusun" tick={{ fontSize: 12 }} />
           <YAxis allowDecimals={false} tick={{ fontSize: 12 }} />
           <Tooltip />
-          <Bar dataKey="total" name="Jumlah Warga" fill="#059669" radius={[6, 6, 0, 0]} />
+          <Bar dataKey="total" name="Jumlah Warga" fill="#166534" radius={[6, 6, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </div>

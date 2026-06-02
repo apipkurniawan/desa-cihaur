@@ -16,11 +16,11 @@ export function DashboardCard({
     <Card>
       <CardContent className="flex items-start justify-between gap-4 p-5">
         <div>
-          <p className="text-sm font-medium text-slate-500">{title}</p>
-          <p className="mt-2 text-3xl font-semibold text-slate-950">{value}</p>
-          <p className="mt-1 text-xs text-slate-500">{description}</p>
+          <p className="text-sm font-medium text-app-muted">{title}</p>
+          <p className="mt-2 text-3xl font-semibold text-app-text">{value}</p>
+          <p className="mt-1 text-xs text-app-muted">{description}</p>
         </div>
-        <div className="rounded-md bg-emerald-50 p-2 text-emerald-700">
+        <div className="rounded-md bg-primary/5 p-2 text-primary">
           <Icon className="h-5 w-5" />
         </div>
       </CardContent>

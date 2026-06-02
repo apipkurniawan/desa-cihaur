@@ -27,9 +27,9 @@ export default function ArtikelPage() {
         {articles.map((article) => (
           <Card key={article.title}>
             <CardContent className="p-5">
-              <p className="text-xs font-medium uppercase text-emerald-700">{article.category}</p>
-              <h2 className="mt-2 font-semibold text-slate-950">{article.title}</h2>
-              <p className="mt-2 text-sm leading-6 text-slate-500">{article.excerpt}</p>
+              <p className="text-xs font-medium uppercase text-primary">{article.category}</p>
+              <h2 className="mt-2 font-semibold text-app-text">{article.title}</h2>
+              <p className="mt-2 text-sm leading-6 text-app-muted">{article.excerpt}</p>
             </CardContent>
           </Card>
         ))}

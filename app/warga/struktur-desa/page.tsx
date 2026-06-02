@@ -19,8 +19,8 @@ export default function StrukturDesaPage() {
         {struktur.map(([jabatan, nama]) => (
           <Card key={jabatan}>
             <CardContent className="p-5">
-              <p className="text-sm text-slate-500">{jabatan}</p>
-              <p className="mt-1 text-lg font-semibold text-slate-950">{nama}</p>
+              <p className="text-sm text-app-muted">{jabatan}</p>
+              <p className="mt-1 text-lg font-semibold text-app-text">{nama}</p>
             </CardContent>
           </Card>
         ))}

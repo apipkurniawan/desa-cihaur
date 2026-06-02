@@ -19,13 +19,13 @@ export default function TransparansiPage() {
               <CardTitle>{item.kategori}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-semibold text-slate-950">
+              <p className="text-2xl font-semibold text-app-text">
                 {new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(item.realisasi)}
               </p>
-              <div className="mt-4 h-2 rounded-full bg-slate-100">
-                <div className="h-2 rounded-full bg-emerald-600" style={{ width: `${item.persentase}%` }} />
+              <div className="mt-4 h-2 rounded-full bg-primary/10">
+                <div className="h-2 rounded-full bg-primary" style={{ width: `${item.persentase}%` }} />
               </div>
-              <p className="mt-2 text-sm text-slate-500">{item.persentase}% dari total realisasi contoh.</p>
+              <p className="mt-2 text-sm text-app-muted">{item.persentase}% dari total realisasi contoh.</p>
             </CardContent>
           </Card>
         ))}

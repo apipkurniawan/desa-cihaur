@@ -32,7 +32,7 @@ export default function DashboardPage() {
           <CardContent>
             <ul className="space-y-3">
               {recentActivities.map((activity) => (
-                <li key={activity} className="rounded-md bg-slate-50 p-3 text-sm text-slate-600">
+                <li key={activity} className="rounded-md bg-app-background p-3 text-sm text-app-text/80">
                   {activity}
                 </li>
               ))}

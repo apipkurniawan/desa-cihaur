@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 
 export default function RegisterPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-10">
+    <main className="flex min-h-screen items-center justify-center bg-app-background px-4 py-10">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Register Warga</CardTitle>
@@ -35,9 +35,9 @@ export default function RegisterPage() {
               Register
             </Button>
           </form>
-          <p className="mt-4 text-center text-sm text-slate-500">
+          <p className="mt-4 text-center text-sm text-app-muted">
             Sudah punya akun?{" "}
-            <Link href="/login" className="font-medium text-emerald-700">
+            <Link href="/login" className="font-medium text-primary">
               Login
             </Link>
           </p>

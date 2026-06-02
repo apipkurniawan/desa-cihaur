@@ -26,10 +26,10 @@ export default function DashboardBantuanSosialPage() {
         </CardHeader>
         <CardContent className="space-y-3">
           {penerimaBantuan.map((item) => (
-            <div key={item.id} className="flex flex-col gap-2 rounded-lg border border-slate-200 p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div key={item.id} className="flex flex-col gap-2 rounded-lg border border-app-border p-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="font-medium text-slate-950">{item.wargaNama}</p>
-                <p className="text-sm text-slate-500">{item.programNama}</p>
+                <p className="font-medium text-app-text">{item.wargaNama}</p>
+                <p className="text-sm text-app-muted">{item.programNama}</p>
               </div>
               <StatusBadge status={item.status} />
             </div>

@@ -34,7 +34,7 @@ export function PengajuanSuratForm() {
             <Label htmlFor="jenisSuratId">Jenis Surat</Label>
             <select
               id="jenisSuratId"
-              className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="flex h-10 w-full rounded-md border border-app-border bg-white px-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
               {...register("jenisSuratId")}
             >
               <option value="">Pilih jenis surat</option>
@@ -44,12 +44,12 @@ export function PengajuanSuratForm() {
                 </option>
               ))}
             </select>
-            {errors.jenisSuratId ? <p className="text-xs text-red-600">{errors.jenisSuratId.message}</p> : null}
+            {errors.jenisSuratId ? <p className="text-xs text-accent">{errors.jenisSuratId.message}</p> : null}
           </div>
           <div className="space-y-2">
             <Label htmlFor="keperluan">Keperluan</Label>
             <Textarea id="keperluan" {...register("keperluan")} />
-            {errors.keperluan ? <p className="text-xs text-red-600">{errors.keperluan.message}</p> : null}
+            {errors.keperluan ? <p className="text-xs text-accent">{errors.keperluan.message}</p> : null}
           </div>
           <FileUpload label="Dokumen Pendukung" name="dokumenPendukung" />
           <Button type="submit">Kirim Pengajuan</Button>

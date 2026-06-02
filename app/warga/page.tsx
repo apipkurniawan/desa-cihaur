@@ -19,9 +19,9 @@ export default function PortalWargaPage() {
         ].map((item) => (
           <Card key={item.href}>
             <CardContent className="p-5">
-              <item.icon className="mb-4 h-7 w-7 text-emerald-700" />
-              <h2 className="font-semibold text-slate-950">{item.title}</h2>
-              <p className="mt-2 text-sm text-slate-500">{item.desc}</p>
+              <item.icon className="mb-4 h-7 w-7 text-primary" />
+              <h2 className="font-semibold text-app-text">{item.title}</h2>
+              <p className="mt-2 text-sm text-app-muted">{item.desc}</p>
               <Button asChild variant="link" className="mt-4">
                 <Link href={item.href}>
                   Buka
