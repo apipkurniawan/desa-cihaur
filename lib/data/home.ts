@@ -117,21 +117,33 @@ export const villagePotentials: VillagePotential[] = [
     title: "Pertanian",
     description: "Hamparan sawah dan kebun warga menjadi sumber pangan dan ekonomi utama desa.",
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80",
+    label: "Komoditas Unggulan",
+    metric: "180 Ha lahan produktif",
+    icon: "sprout",
   },
   {
     title: "Peternakan",
     description: "Peternakan rakyat mendukung ketahanan ekonomi keluarga dan kebutuhan lokal.",
     image: "https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&w=900&q=80",
+    label: "Ekonomi Keluarga",
+    metric: "Puluhan kandang rakyat",
+    icon: "cow",
   },
   {
     title: "UMKM",
     description: "Produk olahan, kuliner, dan perdagangan kecil terus tumbuh di masyarakat.",
     image: "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=900&q=80",
+    label: "Produk Lokal",
+    metric: "86 pelaku usaha",
+    icon: "store",
   },
   {
     title: "Wisata Alam",
     description: "Lingkungan asri Kuningan membuka peluang wisata edukatif dan alam pedesaan.",
     image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+    label: "Alam Asri",
+    metric: "Panorama desa",
+    icon: "mountain",
   },
 ];
 

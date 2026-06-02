@@ -50,6 +50,9 @@ export type VillagePotential = {
   title: string;
   description: string;
   image: string;
+  label: string;
+  metric: string;
+  icon: HomeIconName;
 };
 
 export type VillageStaff = {
