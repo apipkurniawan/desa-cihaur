@@ -25,7 +25,11 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const protectedRoute = request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname.startsWith("/warga");
+  const publicRoutes = ["/warga/transparansi"];
+  const isPublicRoute = publicRoutes.some((path) => request.nextUrl.pathname === path);
+  const protectedRoute =
+    request.nextUrl.pathname.startsWith("/dashboard") ||
+    (request.nextUrl.pathname.startsWith("/warga") && !isPublicRoute);
   if (protectedRoute && !user && process.env.NEXT_PUBLIC_SUPABASE_URL) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
