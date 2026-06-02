@@ -68,11 +68,20 @@ export type PengajuanSurat = {
 
 export type Pengumuman = {
   id: string;
+  slug?: string;
   judul: string;
   isi: string;
+  ringkasan?: string;
   kategori: string;
   tanggalPublish: string;
   status: StatusPublish;
+  imageUrl?: string;
+  penulis?: string;
+  estimasiBaca?: string;
+  prioritas?: "normal" | "penting" | "mendesak";
+  poinPenting?: string[];
+  detail?: string[];
+  kontak?: string;
 };
 
 export type Kegiatan = {
